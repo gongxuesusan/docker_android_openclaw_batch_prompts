@@ -22,7 +22,32 @@ echo "════════════════════════�
 echo " OpenClaw batch-pipeline setup"
 echo "═══════════════════════════════════════════════════════════════"
 
-# ── 0. Preflight checks ───────────────────────────────────────────────────────
+# ── 0. Conda environment setup ───────────────────────────────────────────────
+
+echo ""
+echo "🐍 Setting up conda environment …"
+
+if ! command -v conda &>/dev/null; then
+    echo "❌ 'conda' not found in PATH." >&2
+    echo "   Install Miniconda or Anaconda and re-run this script." >&2
+    echo "   Miniconda: https://docs.conda.io/en/latest/miniconda.html" >&2
+    exit 1
+fi
+
+if ! conda env list | grep -qE '(^|\s)emulator_openclaw(\s|$)'; then
+    echo "   Creating conda environment 'emulator_openclaw' (Python 3.11) …"
+    conda create -y -n emulator_openclaw python=3.11
+fi
+
+eval "$(conda shell.bash hook)"
+conda activate emulator_openclaw
+
+echo "   Installing Python dependencies …"
+pip install -r requirements.txt
+
+echo "   ✅ Conda environment 'emulator_openclaw' is active."
+
+# ── 1. Preflight checks ───────────────────────────────────────────────────────
 
 echo ""
 echo "🔍 Checking KVM availability …"
@@ -107,6 +132,7 @@ echo "════════════════════════�
 echo " ✅ Setup complete!"
 echo ""
 echo " Next steps:"
+echo "   conda activate emulator_openclaw"
 echo "   python run_pipeline.py                   # run with default prompts.csv"
 echo "   python run_pipeline.py --prompts my.csv  # run with a custom CSV"
 echo "═══════════════════════════════════════════════════════════════"

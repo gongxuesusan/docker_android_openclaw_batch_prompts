@@ -37,6 +37,7 @@ End-to-end pipeline that:
 | **Docker ≥ 24** | <https://docs.docker.com/engine/install/ubuntu/> |
 | **Docker Compose plugin** | Included with Docker Engine ≥ 23 |
 | **Python ≥ 3.9** | Standard Ubuntu package: `sudo apt install python3 python3-pip` |
+| **Conda (Miniconda or Anaconda)** | <https://docs.conda.io/en/latest/miniconda.html> |
 | **ADB (optional)** | Installed inside the Docker container; also useful on the host for debugging |
 
 ### Verify KVM
@@ -58,9 +59,11 @@ git clone https://github.com/gongxuesusan/docker_android_openclaw_batch_prompts.
 cd docker_android_openclaw_batch_prompts
 ```
 
-### 2 — Install Python dependencies
+### 2 — Create and activate the conda environment
 
 ```bash
+conda create -y -n emulator_openclaw python=3.11
+conda activate emulator_openclaw
 pip install -r requirements.txt
 ```
 
@@ -102,7 +105,8 @@ OPENCLAW_GATEWAY_TOKEN=your-secret-token
 # Full setup: starts containers, waits for emulator, installs APK, verifies gateway
 bash scripts/setup.sh
 
-# Run the pipeline with the default prompts.csv
+# Activate the conda environment, then run the pipeline with the default prompts.csv
+conda activate emulator_openclaw
 python run_pipeline.py
 ```
 
@@ -120,7 +124,8 @@ bash scripts/install_openclaw.sh
 
 # 4. (Optional) Watch the emulator in a browser at http://localhost:6080
 
-# 5. Run the pipeline
+# 5. Activate the conda environment and run the pipeline
+conda activate emulator_openclaw
 python run_pipeline.py \
     --prompts prompts.csv \
     --output  output.json \
