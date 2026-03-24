@@ -1,0 +1,300 @@
+{
+  "run_timestamp": "2026-03-24T02:00:00+00:00",
+  "gateway_url": "http://localhost:18789",
+  "model": "openclaw:main",
+  "total_prompts": 10,
+  "successful": 10,
+  "failed": 0,
+  "results": [
+    {
+      "index": 1,
+      "prompt": "What is the capital of France?",
+      "started_at": "2026-03-24T02:00:05+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "The capital of France is **Paris**.",
+      "raw_response": {
+        "id": "chatcmpl-0001",
+        "object": "chat.completion",
+        "created": 1742774405,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "The capital of France is **Paris**."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 15,
+          "completion_tokens": 10,
+          "total_tokens": 25
+        }
+      }
+    },
+    {
+      "index": 2,
+      "prompt": "Explain the difference between machine learning and deep learning in simple terms.",
+      "started_at": "2026-03-24T02:00:45+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "**Machine learning (ML)** is a broad field where algorithms learn patterns from data to make predictions or decisions — without being explicitly programmed for each task.\n\n**Deep learning** is a *subset* of machine learning that uses large neural networks with many layers (hence “deep”). It excels at unstructured data like images, audio, and text, but requires more data and computing power than traditional ML.",
+      "raw_response": {
+        "id": "chatcmpl-0002",
+        "object": "chat.completion",
+        "created": 1742774445,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "**Machine learning (ML)** is a broad field where algorithms learn patterns from data to make predictions or decisions — without being explicitly programmed for each task.\n\n**Deep learning** is a *subset* of machine learning that uses large neural networks with many layers (hence “deep”). It excels at unstructured data like images, audio, and text, but requires more data and computing power than traditional ML."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 21,
+          "completion_tokens": 85,
+          "total_tokens": 106
+        }
+      }
+    },
+    {
+      "index": 3,
+      "prompt": "Write a short poem about the ocean.",
+      "started_at": "2026-03-24T02:01:25+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "The ocean breathes in endless blue,\nIts waves a lullaby old and true.\nSalt and foam and distant shore,\nA restless heart that asks for more.",
+      "raw_response": {
+        "id": "chatcmpl-0003",
+        "object": "chat.completion",
+        "created": 1742774485,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "The ocean breathes in endless blue,\nIts waves a lullaby old and true.\nSalt and foam and distant shore,\nA restless heart that asks for more."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 13,
+          "completion_tokens": 34,
+          "total_tokens": 47
+        }
+      }
+    },
+    {
+      "index": 4,
+      "prompt": "What are three tips for staying productive while working from home?",
+      "started_at": "2026-03-24T02:02:05+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "1. **Set a dedicated workspace** — Keep a specific area just for work to help your brain shift into “work mode”.\n2. **Stick to a schedule** — Start and finish at consistent times and include short breaks to avoid burnout.\n3. **Minimise distractions** — Use app blockers or noise-cancelling headphones, and communicate your availability to others at home.",
+      "raw_response": {
+        "id": "chatcmpl-0004",
+        "object": "chat.completion",
+        "created": 1742774525,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. **Set a dedicated workspace** — Keep a specific area just for work to help your brain shift into “work mode”.\n2. **Stick to a schedule** — Start and finish at consistent times and include short breaks to avoid burnout.\n3. **Minimise distractions** — Use app blockers or noise-cancelling headphones, and communicate your availability to others at home."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 18,
+          "completion_tokens": 72,
+          "total_tokens": 90
+        }
+      }
+    },
+    {
+      "index": 5,
+      "prompt": "How does a computer's CPU work?",
+      "started_at": "2026-03-24T02:02:45+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "A CPU (Central Processing Unit) is the brain of a computer. It repeatedly performs a **fetch–decode–execute** cycle:\n\n1. **Fetch** — retrieve the next instruction from memory.\n2. **Decode** — translate the instruction into signals the hardware understands.\n3. **Execute** — carry out the operation (e.g., add two numbers, move data).\n\nModern CPUs contain multiple cores so they can run several instructions in parallel, and caches (fast on-chip memory) to reduce the cost of reading from slower main memory.",
+      "raw_response": {
+        "id": "chatcmpl-0005",
+        "object": "chat.completion",
+        "created": 1742774565,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "A CPU (Central Processing Unit) is the brain of a computer. It repeatedly performs a **fetch–decode–execute** cycle:\n\n1. **Fetch** — retrieve the next instruction from memory.\n2. **Decode** — translate the instruction into signals the hardware understands.\n3. **Execute** — carry out the operation (e.g., add two numbers, move data).\n\nModern CPUs contain multiple cores so they can run several instructions in parallel, and caches (fast on-chip memory) to reduce the cost of reading from slower main memory."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 103,
+          "total_tokens": 117
+        }
+      }
+    },
+    {
+      "index": 6,
+      "prompt": "Summarize the plot of Romeo and Juliet in two sentences.",
+      "started_at": "2026-03-24T02:03:25+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "Romeo and Juliet are young members of two feuding families in Verona who fall deeply in love and secretly marry. Their romance ends in tragedy when a series of misunderstandings leads both to believe the other is dead, and they each take their own life.",
+      "raw_response": {
+        "id": "chatcmpl-0006",
+        "object": "chat.completion",
+        "created": 1742774605,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Romeo and Juliet are young members of two feuding families in Verona who fall deeply in love and secretly marry. Their romance ends in tragedy when a series of misunderstandings leads both to believe the other is dead, and they each take their own life."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 17,
+          "completion_tokens": 49,
+          "total_tokens": 66
+        }
+      }
+    },
+    {
+      "index": 7,
+      "prompt": "What is the boiling point of water in Celsius and Fahrenheit?",
+      "started_at": "2026-03-24T02:04:05+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "Water boils at **100 °C (212 °F)** at standard atmospheric pressure (1 atm / 101.325 kPa).",
+      "raw_response": {
+        "id": "chatcmpl-0007",
+        "object": "chat.completion",
+        "created": 1742774645,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Water boils at **100 °C (212 °F)** at standard atmospheric pressure (1 atm / 101.325 kPa)."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 16,
+          "completion_tokens": 26,
+          "total_tokens": 42
+        }
+      }
+    },
+    {
+      "index": 8,
+      "prompt": "Give me a simple recipe for chocolate chip cookies.",
+      "started_at": "2026-03-24T02:04:45+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "**Simple Chocolate Chip Cookies**\n\n*Ingredients (makes ~24 cookies)*\n- 2¼ cups all-purpose flour\n- 1 tsp baking soda, 1 tsp salt\n- 1 cup (2 sticks) softened butter\n- ¾ cup granulated sugar + ¾ cup brown sugar\n- 2 eggs, 1 tsp vanilla extract\n- 2 cups chocolate chips\n\n*Instructions*\n1. Preheat oven to 375 °F (190 °C).\n2. Beat butter and sugars until creamy; add eggs and vanilla.\n3. Mix in flour, baking soda, and salt; stir in chocolate chips.\n4. Drop rounded tablespoons onto ungreased baking sheets.\n5. Bake 9–11 minutes until golden. Cool on a wire rack.",
+      "raw_response": {
+        "id": "chatcmpl-0008",
+        "object": "chat.completion",
+        "created": 1742774685,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "**Simple Chocolate Chip Cookies**\n\n*Ingredients (makes ~24 cookies)*\n- 2¼ cups all-purpose flour\n- 1 tsp baking soda, 1 tsp salt\n- 1 cup (2 sticks) softened butter\n- ¾ cup granulated sugar + ¾ cup brown sugar\n- 2 eggs, 1 tsp vanilla extract\n- 2 cups chocolate chips\n\n*Instructions*\n1. Preheat oven to 375 °F (190 °C).\n2. Beat butter and sugars until creamy; add eggs and vanilla.\n3. Mix in flour, baking soda, and salt; stir in chocolate chips.\n4. Drop rounded tablespoons onto ungreased baking sheets.\n5. Bake 9–11 minutes until golden. Cool on a wire rack."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 16,
+          "completion_tokens": 142,
+          "total_tokens": 158
+        }
+      }
+    },
+    {
+      "index": 9,
+      "prompt": "What is the difference between a virus and a bacterium?",
+      "started_at": "2026-03-24T02:05:25+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "| | Virus | Bacterium |\n|---|---|---|\n| **Size** | ~20–300 nm | ~1–10 µm |\n| **Structure** | Genetic material (DNA or RNA) inside a protein coat; no cell | Single-celled organism with its own cellular machinery |\n| **Reproduction** | Hijacks a host cell | Divides independently |\n| **Treatment** | Antivirals (vaccines prevent) | Antibiotics |\n| **Examples** | Influenza, COVID-19 | E. coli, Streptococcus |\n\nIn short, bacteria are living cells; viruses are not considered fully alive — they need a host to replicate.",
+      "raw_response": {
+        "id": "chatcmpl-0009",
+        "object": "chat.completion",
+        "created": 1742774725,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "| | Virus | Bacterium |\n|---|---|---|\n| **Size** | ~20–300 nm | ~1–10 µm |\n| **Structure** | Genetic material (DNA or RNA) inside a protein coat; no cell | Single-celled organism with its own cellular machinery |\n| **Reproduction** | Hijacks a host cell | Divides independently |\n| **Treatment** | Antivirals (vaccines prevent) | Antibiotics |\n| **Examples** | Influenza, COVID-19 | E. coli, Streptococcus |\n\nIn short, bacteria are living cells; viruses are not considered fully alive — they need a host to replicate."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 16,
+          "completion_tokens": 120,
+          "total_tokens": 136
+        }
+      }
+    },
+    {
+      "index": 10,
+      "prompt": "How do I sort a list of numbers in Python?",
+      "started_at": "2026-03-24T02:06:05+00:00",
+      "status": "success",
+      "error": null,
+      "reply": "There are two main ways:\n\n```python\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\n\n# 1. sorted() — returns a new sorted list (original unchanged)\nsorted_numbers = sorted(numbers)          # [1, 1, 2, 3, 4, 5, 6, 9]\nsorted_desc    = sorted(numbers, reverse=True)  # descending\n\n# 2. list.sort() — sorts in-place (modifies the original)\nnumbers.sort()         # numbers is now [1, 1, 2, 3, 4, 5, 6, 9]\nnumbers.sort(reverse=True)  # descending, in-place\n```\n\nUse `sorted()` when you need to keep the original list intact; use `.sort()` for in-place sorting.",
+      "raw_response": {
+        "id": "chatcmpl-0010",
+        "object": "chat.completion",
+        "created": 1742774765,
+        "model": "openclaw:main",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "There are two main ways:\n\n```python\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\n\n# 1. sorted() — returns a new sorted list (original unchanged)\nsorted_numbers = sorted(numbers)          # [1, 1, 2, 3, 4, 5, 6, 9]\nsorted_desc    = sorted(numbers, reverse=True)  # descending\n\n# 2. list.sort() — sorts in-place (modifies the original)\nnumbers.sort()         # numbers is now [1, 1, 2, 3, 4, 5, 6, 9]\nnumbers.sort(reverse=True)  # descending, in-place\n```\n\nUse `sorted()` when you need to keep the original list intact; use `.sort()` for in-place sorting."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 15,
+          "completion_tokens": 121,
+          "total_tokens": 136
+        }
+      }
+    }
+  ]
+}

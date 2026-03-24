@@ -1,0 +1,31 @@
+// OpenClaw Gateway configuration
+// Docs: https://docs.openclaw.ai
+//
+// This file is mounted into the openclaw-gateway container at
+// /root/.config/openclaw/config.json5
+//
+// It enables the OpenAI-compatible HTTP Chat Completions endpoint so that
+// run_pipeline.py can call POST /v1/chat/completions.
+
+{
+  gateway: {
+    // Expose the OpenAI-compatible HTTP endpoint on the gateway port.
+    http: {
+      endpoints: {
+        chatCompletions: { enabled: true },
+      },
+    },
+
+    // Bearer-token authentication.
+    // The token value is read from the OPENCLAW_GATEWAY_TOKEN env variable at
+    // runtime; set it in .env or docker-compose.yml.
+    auth: {
+      mode: "token",
+      // The literal token value can be overridden by OPENCLAW_GATEWAY_TOKEN.
+      token: "${OPENCLAW_GATEWAY_TOKEN}",
+    },
+
+    // Rate-limit repeated auth failures to slow down brute-force attempts.
+    // rateLimit: { maxFailures: 5, windowSecs: 60 },
+  },
+}

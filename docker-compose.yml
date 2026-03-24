@@ -1,0 +1,75 @@
+version: "3.8"
+
+# End-to-end pipeline: Android emulator + OpenClaw gateway
+#
+# Services:
+#   android-emulator  – budtmo/docker-android with KVM acceleration
+#   openclaw-gateway  – OpenClaw Node.js gateway exposing the OpenAI-compatible HTTP API
+#
+# Usage:
+#   docker compose up -d
+#   # wait for emulator (scripts/wait_for_emulator.sh)
+#   # install APK (scripts/install_openclaw.sh)
+#   # run pipeline (python run_pipeline.py)
+
+services:
+
+  android-emulator:
+    image: budtmo/docker-android:emulator_11.0
+    container_name: android-emulator
+    privileged: true
+    devices:
+      - /dev/kvm:/dev/kvm
+    ports:
+      - "6080:6080"   # noVNC web UI  → http://localhost:6080
+      - "5554:5554"   # emulator console
+      - "5555:5555"   # ADB TCP
+    environment:
+      EMULATOR_DEVICE: "Samsung Galaxy S10"
+      WEB_VNC: "true"
+    volumes:
+      - android-data:/home/androidusr
+    restart: unless-stopped
+    healthcheck:
+      # The emulator writes "device" to /device_status once it is fully booted
+      test: ["CMD", "bash", "-c", "cat /device_status 2>/dev/null | grep -q device"]
+      interval: 30s
+      timeout: 10s
+      retries: 30
+      start_period: 120s
+
+  openclaw-gateway:
+    image: node:24-slim
+    container_name: openclaw-gateway
+    working_dir: /app
+    # Install openclaw globally, copy the config, then start the gateway
+    command: >
+      bash -c "
+        npm install -g openclaw@latest &&
+        mkdir -p /root/.config/openclaw &&
+        cp /app/config/openclaw.json5 /root/.config/openclaw/config.json5 &&
+        openclaw gateway --port 18789
+      "
+    ports:
+      - "18789:18789"   # OpenAI-compatible HTTP API
+    volumes:
+      - ./config:/app/config:ro
+      - openclaw-data:/root/.config/openclaw
+    environment:
+      # Token used for Bearer authentication against the gateway API.
+      # Override via environment variable when running in production.
+      OPENCLAW_GATEWAY_TOKEN: "${OPENCLAW_GATEWAY_TOKEN:-changeme}"
+    restart: unless-stopped
+    depends_on:
+      android-emulator:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:18789/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+volumes:
+  android-data:
+  openclaw-data:
