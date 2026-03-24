@@ -1,0 +1,6 @@
+# OpenClaw batch prompts — one prompt per line.
+# Lines starting with '#' and blank lines are ignored.
+
+What is the weather today?
+Summarize the latest news.
+Tell me a joke.

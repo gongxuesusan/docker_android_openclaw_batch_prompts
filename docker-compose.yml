@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  android-openclaw:
+    build: .
+    image: android-openclaw-batch
+    privileged: true
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S10
+      - WEB_VNC=true
+      - OPENCLAW_APK=/app/openclaw.apk
+      - PROMPTS_FILE=/app/prompts/prompts.txt
+      - OUTPUT_FILE=/app/output/results.json
+      - PROMPT_DELAY=3
+    ports:
+      - "6080:6080"   # noVNC web interface
+      - "5554:5554"   # Android emulator console
+      - "5555:5555"   # ADB
+    volumes:
+      - ./prompts:/app/prompts
+      - ./output:/app/output
+      - ./openclaw.apk:/app/openclaw.apk:ro
+    healthcheck:
+      test: ["CMD", "adb", "shell", "getprop", "sys.boot_completed"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
